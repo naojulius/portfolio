@@ -12,10 +12,11 @@ app.use(function(req, res, next) {
   });
 // Static Files
 app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'app/css'))
-app.use('/js', express.static(__dirname + 'app/js'))
-app.use('/img', express.static(__dirname + 'app/img'))
-app.use('/wasm', express.static(__dirname + 'app/wasm'))
+/app.use('/app', express.static(__dirname + 'app/wasm'))
+//app.use('/css', express.static(__dirname + 'app/css'))
+app.use('/app', express.static(__dirname + 'app/js'))
+//app.use('/img', express.static(__dirname + 'app/img'))
+//app.use('/wasm', express.static(__dirname + 'app/wasm'))
 
 app.use(express.static(__dirname + '/app'));
 app.engine('html', require('ejs').renderFile);
