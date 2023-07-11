@@ -23,8 +23,11 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.get('', (req, res) => {
-
     res.sendFile(path.join(__dirname, 'app/index.html'));
 })
+app.get('index.wasm', (req, res) => {
+  res.sendFile(path.join(__dirname, 'app/index.wasm'));
+})
+
 
 app.listen(port, () => console.info(`Listening on port ${port}`))
